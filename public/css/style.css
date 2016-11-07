@@ -12,6 +12,71 @@ h1.logo{
     font-weight: 100;
 }
 
+#base-form{
+    border-radius: 0;
+    border: 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#base-form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+#base-form input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 0;
+}
+#base-form input[type=checkbox]{
+    width: auto;
+}
+
+#base-form button {
+
+    font-weight: 100;
+    text-transform: uppercase;
+    outline: 0;
+    background: #303641;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+#base-form button:hover,#base-form button:active,#base-form button:focus {
+    background: #3d4452;
+}
+#base-form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+#base-form .message a {
+    color: #303641;
+    text-decoration: none;
+}
+
+#base-form .card-header{
+    background: #FFF;
+}
+
+.navbar-dark{
+    background: #121212;
+}
+
 footer p{
     font-size: 10px;
     color: #FFF;
