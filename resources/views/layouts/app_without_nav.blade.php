@@ -26,34 +26,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 </head>
 <body>
-<!-- Navigation -->
-<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-    <a class="navbar-brand" href="{{ url('/') }}">Laravel Project</a>
-    <ul class="nav navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url('/') }}">Accueil</a>
-        </li>
 
-        @if(Auth::guest())
-            <li class="nav-item float-md-right">
-                <a class="nav-link" href="{{ url('register')  }}">S'inscrire</a>
-            </li>
-            <li class="nav-item float-md-right">
-                <a class="nav-link" href="{{ url('login') }}">Se connecter</a>
-            </li>
-        @else
-            <li class="nav-item dropdown float-lg-right">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="responsiveNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon compte</a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="responsiveNavbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ Auth::logout() }}">Se déconnecter</a>
-                </div>
-            </li>
-        @endif
-    </ul>
-</nav>
 @yield('content')
 <footer class="footer navbar-fixed-bottom">
     <div class="container-fluid">
