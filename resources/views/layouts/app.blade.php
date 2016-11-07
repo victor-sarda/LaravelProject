@@ -12,9 +12,10 @@
     <meta name="author" content="Victor Sarda">
     <meta name="keywords" content="victor, sarda, victorsarda, web, developpement, development, html, php, site, laravel,">
 
-    <!-- Bootstrap & CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet" integrity="sha384-awusxf8AUojygHf2+joICySzB780jVvQaVCAt1clU3QsyAitLGul28Qxb2r1e5g+" crossorigin="anonymous">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
+    <!-- Bootstrap 4 & CSS -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
     <!-- FontAwesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
@@ -22,66 +23,41 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
-    <![endif]-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{url('/')}}">Laravel Project</a>
-        </div>
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <a class="navbar-brand" href="{{ url('/') }}">Laravel Project</a>
+    <ul class="nav navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url('/') }}">Accueil</a>
+        </li>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ url('/') }}">Accueil</a></li>
-            </ul>
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Recherche">
+        @if(Auth::guest())
+            <li class="nav-item float-md-right">
+                <a class="nav-link" href="{{ url('register')  }}">S'inscrire</a>
+            </li>
+            <li class="nav-item float-md-right">
+                <a class="nav-link" href="{{ url('login') }}">Se connecter</a>
+            </li>
+        @else
+            <li class="nav-item dropdown float-lg-right">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="responsiveNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon compte</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="responsiveNavbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ Auth::logout() }}">Se déconnecter</a>
                 </div>
-                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> </button>
-            </form>
-            @if(Auth::guest())
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ url('register') }}">S'inscrire</a></li>
-                    <li><a href="{{ url('login') }}">Se connecter</a></li>
-                </ul>
-            @else
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mon compte <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="{{ Auth::logout() }}">Se déconnecter</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            @endif
-
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+            </li>
+        @endif
+    </ul>
 </nav>
 @yield('content')
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <p class="pull-right">Made with <i class="fa fa-heart" aria-hidden="true"></i> by Victor Sarda | Built with Laravel Framework <i class="fa fa-hand-peace-o" aria-hidden="true"></i></p>
-            </div>
-        </div>
+<footer class="footer navbar-fixed-bottom">
+    <div class="container-fluid">
+        <p class="pull-right">Made with <i class="fa fa-heart" aria-hidden="true"></i> by Victor Sarda | Built with Laravel Framework <i class="fa fa-hand-peace-o" aria-hidden="true"></i></p>
     </div>
 </footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
