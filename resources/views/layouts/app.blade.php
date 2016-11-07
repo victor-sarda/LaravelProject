@@ -14,7 +14,7 @@
 
     <!-- Bootstrap & CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet" integrity="sha384-awusxf8AUojygHf2+joICySzB780jVvQaVCAt1clU3QsyAitLGul28Qxb2r1e5g+" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
     <!-- FontAwesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
@@ -37,13 +37,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Laravel Project</a>
+            <a class="navbar-brand" href="{{url('/')}}">Laravel Project</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ url('home') }}">Accueil</a></li>
+                <li class="active"><a href="{{ url('/') }}">Accueil</a></li>
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="form-group">
@@ -53,8 +53,8 @@
             </form>
             @if(Auth::guest())
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">S'inscrire</a></li>
-                    <li><a href="#">Connexion</a></li>
+                    <li><a href="{{ url('register') }}">S'inscrire</a></li>
+                    <li><a href="{{ url('login') }}">Se connecter</a></li>
                 </ul>
             @else
                 <ul class="nav navbar-nav navbar-right">
@@ -65,7 +65,7 @@
                             <li><a href="#">Another action</a></li>
                             <li><a href="#">Something else here</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li><a href="{{ Auth::logout() }}">Se déconnecter</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -87,6 +87,6 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/app.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
