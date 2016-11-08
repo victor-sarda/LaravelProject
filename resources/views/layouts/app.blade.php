@@ -58,6 +58,9 @@
                     <a class="dropdown-item" href="#">Another action</a>
                     <div class="dropdown-divider"></div>
                 </div>
+                <!--
+                TODO: Logout
+                -->
             </li>
         @endif
     </ul>
