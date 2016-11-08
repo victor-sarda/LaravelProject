@@ -14,9 +14,9 @@
 Auth::routes();
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('home');
 });
 
 
-Route::get('/home', 'HomeController@index');
+Route::get('home', 'HomeController@index');
 Route::get('snippets', 'SnippetsController@index');
