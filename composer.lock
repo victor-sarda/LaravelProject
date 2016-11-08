@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "aed1d80b8dea71c64e39e019ad76c4c2",
-    "content-hash": "6a28b04a411200f56222c4907eda3948",
+    "hash": "167e6bc6c5617c7b17e1664949167663",
+    "content-hash": "58b08404d2a49d5dba7df0706b7da530",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -543,6 +543,54 @@
             "time": "2016-08-27 23:52:43"
         },
         {
+            "name": "laravelista/ekko",
+            "version": "1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravelista/Ekko.git",
+                "reference": "8355f9efdba816443a39d5fd3cf396fec30b26d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravelista/Ekko/zipball/8355f9efdba816443a39d5fd3cf396fec30b26d3",
+                "reference": "8355f9efdba816443a39d5fd3cf396fec30b26d3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/routing": "~4.0|~5.0",
+                "illuminate/support": "~4.0|~5.0",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Laravelista\\Ekko\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mario Bašić",
+                    "email": "mario.basic@outlook.com"
+                }
+            ],
+            "description": "Laravel helper for detecting active navigation menu items and applying bootstrap classes.",
+            "keywords": [
+                "bootstrap",
+                "helper",
+                "laravel",
+                "navigation"
+            ],
+            "time": "2016-04-23 21:46:15"
+        },
+        {
             "name": "league/flysystem",
             "version": "1.0.32",
             "source": {
@@ -908,16 +956,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.3",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "c0125896dbb151380ab47e96c621741e79623beb"
+                "reference": "a9b97968bcde1c4de2a5ec6cbd06a0f6c919b46e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c0125896dbb151380ab47e96c621741e79623beb",
-                "reference": "c0125896dbb151380ab47e96c621741e79623beb",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/a9b97968bcde1c4de2a5ec6cbd06a0f6c919b46e",
+                "reference": "a9b97968bcde1c4de2a5ec6cbd06a0f6c919b46e",
                 "shasum": ""
             },
             "require": {
@@ -952,7 +1000,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-10-17 15:23:22"
+            "time": "2016-11-07 23:38:38"
         },
         {
             "name": "psr/log",

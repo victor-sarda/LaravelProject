@@ -11,6 +11,7 @@
     <meta name="Description" content="@yield('description')" />
     <meta name="author" content="Victor Sarda">
     <meta name="keywords" content="victor, sarda, victorsarda, web, developpement, development, html, php, site, laravel,">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Bootstrap 4 & CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -22,6 +23,11 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
+    <script>
+        window.Laravel = <?php echo json_encode([
+                'csrfToken' => csrf_token(),
+        ]); ?>
+    </script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 </head>
@@ -32,6 +38,9 @@
     <ul class="nav navbar-nav">
         <li class="nav-item">
             <a class="nav-link" href="{{ url('/') }}">Accueil</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url('snippets') }}">Snippets</a>
         </li>
 
         @if(Auth::guest())
@@ -48,7 +57,14 @@
                     <a class="dropdown-item" href="#">Action</a>
                     <a class="dropdown-item" href="#">Another action</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ Auth::logout() }}">Se déconnecter</a>
+                    <a href="{{ url('/logout') }}"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 </div>
             </li>
         @endif

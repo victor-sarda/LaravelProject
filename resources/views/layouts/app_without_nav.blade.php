@@ -11,6 +11,7 @@
     <meta name="Description" content="@yield('description')" />
     <meta name="author" content="Victor Sarda">
     <meta name="keywords" content="victor, sarda, victorsarda, web, developpement, development, html, php, site, laravel,">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Bootstrap 4 & CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">

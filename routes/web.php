@@ -12,6 +12,11 @@
 */
 
 Auth::routes();
-Route::get('/', 'HomeController@index');
+
+Route::get('/', function () {
+    return view('auth.login');
+});
 
 
+Route::get('/home', 'HomeController@index');
+Route::get('snippets', 'SnippetsController@index');
